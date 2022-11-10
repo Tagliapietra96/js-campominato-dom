@@ -111,7 +111,7 @@ function createGrid(domElement, numOfCols) {
             let score = allActive.length;
             const allCells = document.querySelectorAll('.my-cell');
 
-            if ((allBombsEl.length + allActive.length) === allCells.length){
+            if ((allBombsEl.length + allActive.length) === allCells.length) {
                 alert(`Complimenti hai vinto!!! il tuo punteggio è di ${score}`);
                 for (a = 0; a < allCells.length; a++) {
                     allCells[a].classList.add('my-end');
@@ -121,6 +121,157 @@ function createGrid(domElement, numOfCols) {
 
         domElement.append(newCell);
     };
+
+    for (let i = 1; i <= (Math.pow(numOfCols, 2)); i++) {
+        let counter = 0
+        let myCell = el(`.my-cell:nth-child(${i})`);
+        if (!myCell.classList.contains('bomb')) {
+            for (x = 0; x < bombList.length; x++) {
+                let bombPosition = bombList[x];
+                if (i === 1) {
+
+                    if ((bombPosition) === (i + 1)) {
+                        counter++;
+                    };
+                    if ((bombPosition) === (i + numOfCols)) {
+                        counter++;
+                    };
+                    if ((bombPosition) === (i + numOfCols + 1)) {
+                        counter++;
+                    };
+                } else if (i === numOfCols) {
+                    if ((bombPosition) === (i - 1)) {
+                        counter++;
+                    };
+                    if ((bombPosition) === (i + numOfCols - 1)) {
+                        counter++;
+                    };
+                    if ((bombPosition) === (i + numOfCols)) {
+                        counter++;
+                    };
+                } else if(i === (Math.pow(numOfCols, 2) - numOfCols + 1) ){
+                    if ((bombPosition) === (i - numOfCols)) {
+                        counter++;
+                    };
+                    if ((bombPosition) === (i - numOfCols + 1)) {
+                        counter++;
+                    };
+                    if ((bombPosition) === (i + 1)) {
+                        counter++;
+                    };
+                } else if(i === (Math.pow(numOfCols, 2))){
+                    if ((bombPosition) === (i - numOfCols - 1)) {
+                        counter++;
+                    };
+                    if ((bombPosition) === (i - numOfCols)) {
+                        counter++;
+                    };
+                    if ((bombPosition) === (i - 1)) {
+                        counter++;
+                    };
+                } else  {
+                    if (i < numOfCols) {
+                        if ((bombPosition) === (i - 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + numOfCols - 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + numOfCols)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + numOfCols + 1)) {
+                            counter++;
+                        };
+                    } else if (i > (Math.pow(numOfCols, 2) - numOfCols)) {
+                        if ((bombPosition) === (i - numOfCols - 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i - numOfCols)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i - numOfCols + 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i - 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + 1)) {
+                            counter++;
+                        };
+                    } else if (i % (numOfCols + 1) === 0) {
+                        if ((bombPosition) === (i - numOfCols)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i - numOfCols + 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + numOfCols)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + numOfCols + 1)) {
+                            counter++;
+                        };
+                    } else if (i % numOfCols === 0) {
+                        if ((bombPosition) === (i - numOfCols - 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i - numOfCols)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i - 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + numOfCols - 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + numOfCols)) {
+                            counter++;
+                        };
+    
+                    } else {
+    
+                        if ((bombPosition) === (i - numOfCols - 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i - numOfCols)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i - numOfCols + 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i - 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + numOfCols - 1)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + numOfCols)) {
+                            counter++;
+                        };
+                        if ((bombPosition) === (i + numOfCols + 1)) {
+                            counter++;
+                        };
+                    };
+                };
+
+            };
+            if (counter !== 0) {
+                myCell.innerHTML = counter;
+            }
+        };
+
+    };
+
 }
 
 // COSTANTI ****************************************************************

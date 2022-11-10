@@ -95,7 +95,7 @@ main .container.active{
 }
 
 .my-cell > *{
-    opacity: 0;
+    opacity: 1;
     transition: opacity .3s;
 }
 
