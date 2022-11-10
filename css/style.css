@@ -2,6 +2,12 @@
     --js-cell-number: 1;
 }
 
+img{
+    display: block;
+    width: 80%;
+    aspect-ratio: 1/1;
+}
+
 .my-bg{
     background-color: #c6c6c6;
 }
@@ -82,4 +88,21 @@ main .container.active{
 .my-cell.active{
     border: 1px solid #808080;
     transition: border .3s;
+}
+
+.my-cell.bomb.active{
+    background-color: red;
+}
+
+.my-cell > *{
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.my-cell.active > *{
+    opacity: 1;
+}
+
+.my-end{
+    pointer-events: none;
 }
