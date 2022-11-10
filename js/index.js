@@ -202,7 +202,7 @@ function createGrid(domElement, numOfCols) {
                         if ((bombPosition) === (i + 1)) {
                             counter++;
                         };
-                    } else if (i % (numOfCols + 1) === 0) {
+                    } else if (i % (numOfCols) === 1) {
                         if ((bombPosition) === (i - numOfCols)) {
                             counter++;
                         };
