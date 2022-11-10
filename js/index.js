@@ -106,6 +106,17 @@ function createGrid(domElement, numOfCols) {
 
         newCell.addEventListener('click', function () {
             this.classList.add('active');
+            const allBombsEl = document.querySelectorAll('.bomb');
+            const allActive = document.querySelectorAll('.cell-container .active:not(.bomb)');
+            let score = allActive.length;
+            const allCells = document.querySelectorAll('.my-cell');
+
+            if ((allBombsEl.length + allActive.length) === allCells.length){
+                alert(`Complimenti hai vinto!!! il tuo punteggio è di ${score}`);
+                for (a = 0; a < allCells.length; a++) {
+                    allCells[a].classList.add('my-end');
+                };
+            };
         });
 
         domElement.append(newCell);
