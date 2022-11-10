@@ -149,7 +149,7 @@ function createGrid(domElement, numOfCols) {
                     if ((bombPosition) === (i + numOfCols)) {
                         counter++;
                     };
-                } else if(i === (Math.pow(numOfCols, 2) - numOfCols + 1) ){
+                } else if (i === (Math.pow(numOfCols, 2) - numOfCols + 1)) {
                     if ((bombPosition) === (i - numOfCols)) {
                         counter++;
                     };
@@ -159,7 +159,7 @@ function createGrid(domElement, numOfCols) {
                     if ((bombPosition) === (i + 1)) {
                         counter++;
                     };
-                } else if(i === (Math.pow(numOfCols, 2))){
+                } else if (i === (Math.pow(numOfCols, 2))) {
                     if ((bombPosition) === (i - numOfCols - 1)) {
                         counter++;
                     };
@@ -169,7 +169,7 @@ function createGrid(domElement, numOfCols) {
                     if ((bombPosition) === (i - 1)) {
                         counter++;
                     };
-                } else  {
+                } else {
                     if (i < numOfCols) {
                         if ((bombPosition) === (i - 1)) {
                             counter++;
@@ -234,9 +234,9 @@ function createGrid(domElement, numOfCols) {
                         if ((bombPosition) === (i + numOfCols)) {
                             counter++;
                         };
-    
+
                     } else {
-    
+
                         if ((bombPosition) === (i - numOfCols - 1)) {
                             counter++;
                         };
@@ -266,7 +266,10 @@ function createGrid(domElement, numOfCols) {
 
             };
             if (counter !== 0) {
-                myCell.innerHTML = counter;
+                let myNumEl = document.createElement('h3');
+                myNumEl.innerHTML = counter;
+                myCell.append(myNumEl);
+                myNumEl.classList.add(`my-num-${counter}`);
             }
         };
 

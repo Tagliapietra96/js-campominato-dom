@@ -106,3 +106,33 @@ main .container.active{
 .my-end{
     pointer-events: none;
 }
+
+h3{
+    margin: 0 !important;
+}
+
+.my-num-1{
+    color: blue;
+}
+
+.my-num-2{
+    color: red;
+}
+.my-num-3{
+    color: green;
+}
+.my-num-4{
+    color: yellow;
+}
+.my-num-5{
+    color: purple;
+}
+.my-num-6{
+    color: darkred;
+}
+.my-num-7{
+    color: darkorchid;
+}
+.my-num-8{
+    color: aqua;
+}
