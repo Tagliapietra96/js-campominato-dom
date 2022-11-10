@@ -1,0 +1,85 @@
+:root{
+    --js-cell-number: 1;
+}
+
+.my-bg{
+    background-color: #c6c6c6;
+}
+
+.my-border{
+    border-width: 4px;
+    border-style: solid;
+    border-color: #808080 white white #808080;
+}
+
+.my-border-invert{
+    border-width: 4px;
+    border-style: solid;
+    border-color:  white #808080 #808080 white;
+}
+
+header{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all .3s;
+    z-index: 10;
+}
+
+button{
+    transition: border .3s;
+}
+
+button:active{
+    border: 1px solid #808080;
+}
+
+header.active{
+    top: 5px;
+    bottom: calc(100% - 65px);
+    left: 25%;
+    right: 25%;
+}
+
+main .container{
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+main .container.active{
+    opacity: 1;
+}
+
+.my-exit{
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.my-exit.active{
+    opacity: 1;
+}
+
+.cell-container{
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.my-cell{
+    flex-basis: calc(100% / var(--js-cell-number));
+    aspect-ratio: 1/1;
+    border-width: 4px;
+    border-style: solid;
+    border-color:  white #808080 #808080 white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.my-cell.active{
+    border: 1px solid #808080;
+    transition: border .3s;
+}
